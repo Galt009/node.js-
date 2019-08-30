@@ -1,0 +1,35 @@
+var str = "Hello 啊啊啊"
+
+//将一个字符串保存到buffer中
+var buf = Buffer.from(str);
+
+console.log(buf.length); //占用内存的大小
+console.log(str.length); //字符串的长度
+console.log(buf);
+
+//创建指定大小字节的buffer
+var buf2 = Buffer.alloc(10); //字节大小一旦指定，就不能再更改
+//通过索引，来操作buf中的元素
+buf2[0] = 11;
+buf2[1] = 22;
+buf2[2] = 33;
+console.log(buf2);
+
+//只要数字在控制台或页面中输出一定时10进制
+console.log(buf2[2].toString(16)); //输出16进制
+
+---------------------------------------------------------------------
+
+var buf2 = Buffer.alloc(10);
+buf2[0] = 11;
+buf2[1] = 22;
+buf2[2] = 33;
+buf2[3] = 0xaa;
+buf2[4] = "水水水水水水水水水水水水";
+console.log(buf2);
+console.log(buf2[4]);
+
+for(var i = 0; i < buf2.length; i++ ){
+    console.log(buf2[i])
+}
+
