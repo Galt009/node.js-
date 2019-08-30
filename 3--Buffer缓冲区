@@ -26,10 +26,13 @@ buf2[1] = 22;
 buf2[2] = 33;
 buf2[3] = 0xaa;
 buf2[4] = "水水水水水水水水水水水水";
-console.log(buf2);
-console.log(buf2[4]);
+console.log(buf2); //<Buffer 0b 16 21 aa 00 00 00 00 00 00>
+console.log(buf2[4]); //值为 0
+console.log(buf2[4].toString()); //值为 "0"
 
 for(var i = 0; i < buf2.length; i++ ){
-    console.log(buf2[i])
+    console.log(buf2[i]);
 }
 
+var buf4 = Buffer.from("成长的速度");
+console.log(buf4.toString()); //值为 "成长的速度"
