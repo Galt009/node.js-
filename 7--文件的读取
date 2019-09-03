@@ -1,0 +1,17 @@
+// path 要读取的文件的路径
+// options 读取的选项
+// callback回调函数，通过回调函数将读取到内容返回(err, data)
+//     err 错误对象
+//     data 读取到的数据，会返回一个 Buffer
+
+var fs = require("fs");
+
+fs.readFile("1.jpg", function(err, data){
+    if(!err){
+        fs.writeFile("a.jpg", data, function(){
+            if(!err){
+                console.log("文件写入成功")
+            }
+        })
+    }
+})
